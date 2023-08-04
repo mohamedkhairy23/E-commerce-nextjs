@@ -5,28 +5,28 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui")],  
   daisyui: {
     themes: [
       {
         mytheme: {
-          primary: "#0d77a8",
+          primary: "#570df8",
 
-          secondary: "#baa8ea",
+          secondary: "#f000b8",
 
-          accent: "#79cbd1",
+          accent: "#1dcdbc",
 
-          neutral: "#202932",
+          neutral: "#2b3440",
 
-          "base-100": "#f6edf7",
+          "base-100": "#ffffff",
 
-          info: "#9abce4",
+          info: "#3abff8",
 
-          success: "#1f8980",
+          success: "#36d399",
 
-          warning: "#f8b062",
+          warning: "#fbbd23",
 
-          error: "#f4677c",
+          error: "#f87272",
 
           body: {
             "background-color": "#e3e6e6",
