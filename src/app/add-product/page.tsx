@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import FormSubmitButton from "@/components/FormSubmitButton";
 
 export const metadata = {
-  title: 'Add Product - my amazon'
+  title: 'Add Product - amazon'
 }
 
 async function addProduct(formData:FormData) {
@@ -27,7 +27,7 @@ async function addProduct(formData:FormData) {
   redirect("/");
 }
 
-const page = () => {
+const AddProductPage = () => {
   return (
     <div>
       <h1 className='text-lg mb-3 font-bold'>Add Product</h1>
@@ -64,4 +64,4 @@ const page = () => {
   )
 };
 
-export default page;
+export default AddProductPage;
