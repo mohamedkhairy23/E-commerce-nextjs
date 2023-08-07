@@ -1,5 +1,5 @@
-'use client';
-import { ShoppingCart } from "@/lib/db/cart"
+"use client";
+import { ShoppingCart } from "@/lib/db/cart";
 import { formatPrice } from "@/lib/format";
 import Link from "next/link";
 
@@ -7,20 +7,17 @@ interface ShoppingCartButtonProps {
   cart: ShoppingCart | null;
 }
 
-
-
-const ShoppingCartButton = ({cart}: ShoppingCartButtonProps) => {
-
+const ShoppingCartButton = ({ cart }: ShoppingCartButtonProps) => {
   const closeDropdown = () => {
-    const elem = document.activeElement as HTMLElement
+    const elem = document.activeElement as HTMLElement;
 
-    if(elem) {
+    if (elem) {
       elem.blur();
     }
-  }
+  };
   return (
-    <div className="dropdown dropdown-end">
-      <label tabIndex={0} className="btn btn-ghost btn-circle ">
+    <div className="dropdown-end dropdown">
+      <label tabIndex={0} className="btn-ghost btn-circle btn ">
         <div className="indicator">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -36,12 +33,14 @@ const ShoppingCartButton = ({cart}: ShoppingCartButtonProps) => {
               d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
             />
           </svg>
-          <span className="badge badge-sm indicator-item">{cart?.size || 0}</span>
+          <span className="badge badge-sm indicator-item">
+            {cart?.size || 0}
+          </span>
         </div>
       </label>
       <div
         tabIndex={0}
-        className="card dropdown-content card-compact mt-3 w-52 bg-base-100 shadow z-30"
+        className="card dropdown-content card-compact z-30 mt-3 w-52 bg-base-100 shadow"
       >
         <div className="card-body">
           <span className="text-lg font-bold">{cart?.size || 0} Items</span>
@@ -49,9 +48,9 @@ const ShoppingCartButton = ({cart}: ShoppingCartButtonProps) => {
             Subtotal: {formatPrice(cart?.subtotal || 0)}
           </span>
           <div className="card-actions">
-            <Link 
+            <Link
               href="/cart"
-              className="btn btn-primary btn-block"
+              className="btn-primary btn-block btn"
               onClick={closeDropdown}
             >
               View Cart
@@ -60,7 +59,7 @@ const ShoppingCartButton = ({cart}: ShoppingCartButtonProps) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ShoppingCartButton;
