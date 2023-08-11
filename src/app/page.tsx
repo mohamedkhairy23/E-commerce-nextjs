@@ -7,6 +7,7 @@ import Link from "next/link";
 interface HomeProps {
   searchParams: { page: string };
 }
+
 const Home = async ({ searchParams: { page = "1" } }: HomeProps) => {
   const currentPage = parseInt(page);
 
@@ -23,6 +24,7 @@ const Home = async ({ searchParams: { page = "1" } }: HomeProps) => {
       (currentPage - 1) * pageSize + (currentPage === 1 ? 0 : heroItemCount),
     take: pageSize + (currentPage === 1 ? heroItemCount : 0),
   });
+
   return (
     <div className="flex flex-col items-center">
       {currentPage === 1 && (

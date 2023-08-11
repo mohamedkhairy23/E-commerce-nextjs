@@ -18,6 +18,7 @@ async function searchProducts(formData: FormData) {
 
 const Navbar = async () => {
   const cart = await getCart();
+
   const session = await getServerSession(authOptions);
   return (
     <div className="bg-base-100">
